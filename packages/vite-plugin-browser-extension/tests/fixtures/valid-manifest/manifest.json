@@ -1,0 +1,6 @@
+{
+	"name": "valid-manifest",
+	"manifest_version": 3,
+	"description": "Valid manifest.",
+	"version": "1.0.0"
+}

@@ -1,0 +1,67 @@
+{
+	"name": "devutils",
+	"scripts": {
+		"build": "wireit",
+		"dev": "wireit",
+		"pre-commit": "wireit",
+		"publint": "wireit",
+		"test": "wireit"
+	},
+	"wireit": {
+		"build": {
+			"command": "vite build",
+			"files": [
+				"src/**/*.{js,ts}",
+				"tsconfig.json",
+				"../../config/tsconfig.base.json"
+			],
+			"dependencies": [
+				"../../packages/vite-plugin-browser-extension:build"
+			],
+			"output": [
+				"dist"
+			]
+		},
+		"dev": {
+			"command": "vite",
+			"service": true,
+			"files": []
+		},
+		"publint": {
+			"command": "publint",
+			"dependencies": [
+				"build"
+			],
+			"files": [
+				"src/**",
+				"types/**",
+				"package.json"
+			],
+			"output": []
+		},
+		"pre-commit": {
+			"dependencies": [
+				"build",
+				"publint",
+				"test"
+			]
+		},
+		"test": {
+			"command": "vitest run",
+			"files": [
+				"src/**/*.{js,ts}",
+				"tests/**/*.{js,ts}"
+			],
+			"output": []
+		}
+	},
+	"devDependencies": {
+		"@types/node": "^20.10.5",
+		"publint": "^0.2.6",
+		"typescript": "^5.3.3",
+		"vite": "^5.2.10",
+		"vite-plugin-browser-extension": "workspace:*",
+		"vitest": "^1.4.0"
+	},
+	"type": "module"
+}

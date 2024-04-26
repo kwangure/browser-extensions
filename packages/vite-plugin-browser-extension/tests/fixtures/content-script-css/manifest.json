@@ -1,0 +1,16 @@
+{
+	"name": "content-script",
+	"manifest_version": 3,
+	"description": "Content script",
+	"version": "1.0.0",
+	"content_scripts": [
+		{
+			"css": ["script.0.css", "script.1.css"],
+			"matches": ["<all_urls>"]
+		},
+		{
+			"css": ["script.2.css", "script.3.css"],
+			"matches": ["<all_urls>"]
+		}
+	]
+}
