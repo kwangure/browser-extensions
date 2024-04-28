@@ -11,7 +11,7 @@
 		"build": {
 			"command": "vite build",
 			"files": [
-				"src/**/*.{js,ts}",
+				"src/**/*.{css,html,js,ts}",
 				"tsconfig.json",
 				"../../config/tsconfig.base.json"
 			],
@@ -42,14 +42,16 @@
 		"pre-commit": {
 			"dependencies": [
 				"build",
-				"publint",
-				"test"
+				"publint"
 			]
 		},
 		"test": {
 			"command": "vitest run",
+			"dependencies": [
+				"../../packages/vite-plugin-browser-extension:build"
+			],
 			"files": [
-				"src/**/*.{js,ts}",
+				"src/**/*.{css,html,js,ts}",
 				"tests/**/*.{js,ts}"
 			],
 			"output": []
@@ -57,6 +59,7 @@
 	},
 	"devDependencies": {
 		"@types/node": "^20.10.5",
+		"chrome-types": "^0.1.282",
 		"publint": "^0.2.6",
 		"typescript": "^5.3.3",
 		"vite": "^5.2.10",

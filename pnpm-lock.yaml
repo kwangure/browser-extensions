@@ -29,6 +29,9 @@ importers:
       '@types/node':
         specifier: ^20.10.5
         version: 20.10.5
+      chrome-types:
+        specifier: ^0.1.282
+        version: 0.1.282
       publint:
         specifier: ^0.2.6
         version: 0.2.6
@@ -715,6 +718,9 @@ packages:
   chokidar@3.5.3:
     resolution: {integrity: sha512-Dr3sfKRP6oTcjf2JmUmFJfeVMvXBdegxB0iVQ5eb2V10uFJUCAS8OByZdVAyVb8xXNz3GjjTgj9kLWsZTqE6kw==}
     engines: {node: '>= 8.10.0'}
+
+  chrome-types@0.1.282:
+    resolution: {integrity: sha512-gG0mUvPZAwzYGVK6EJLt4dgfL21FAf+kZu4Y2oOedAfzI6u4svLdAnw0GK6kPo1VNqThZ/LlwjGzqXglb+TS6g==}
 
   ci-info@3.9.0:
     resolution: {integrity: sha512-NIxF55hv4nSqQswkAeiOi1r83xy8JldOFDTWiug55KBu9Jnblncd2U6ViHmYgHf01TPZS77NJBhBMKdWj9HQMQ==}
@@ -2857,6 +2863,8 @@ snapshots:
       readdirp: 3.6.0
     optionalDependencies:
       fsevents: 2.3.3
+
+  chrome-types@0.1.282: {}
 
   ci-info@3.9.0: {}
 

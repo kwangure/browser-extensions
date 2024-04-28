@@ -10,7 +10,7 @@ describe('build', () => {
 		assert('output' in result, 'must not be a watcher');
 
 		let manifestChunk;
-		let chunks: OutputChunk[] = [];
+		const chunks: OutputChunk[] = [];
 		for (const output of result.output) {
 			if (output.fileName === 'manifest.json') {
 				manifestChunk = output;
@@ -35,7 +35,9 @@ describe('build', () => {
 		for (let index = 0; index < chunks.length; index++) {
 			expect(chunks[index]?.fileName).toEqual(`script.${index}.js`);
 			expect(chunks[index]?.code).toMatchFileSnapshot(
-				`./fixtures/content-script-js/script.${index}.ts`,
+				`./fixtures/content-script-js/script.${index}.${
+					index % 2 ? 'js' : 'ts'
+				}`,
 			);
 		}
 	});
@@ -46,7 +48,7 @@ describe('build', () => {
 		assert('output' in result, 'must not be a watcher');
 
 		let manifestChunk;
-		let assets: OutputAsset[] = [];
+		const assets: OutputAsset[] = [];
 		for (const output of result.output) {
 			if (output.fileName === 'manifest.json') {
 				manifestChunk = output;

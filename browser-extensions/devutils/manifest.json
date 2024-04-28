@@ -1,11 +1,9 @@
 {
-	"name": "DevUtils",
+	"name": "Dev Utils",
 	"version": "0.0.0",
 	"description": "Utilities for working with webpages",
-	"content_scripts": [
-		{
-			"js": ["src/index.ts"],
-			"matches": ["<all_urls>"]
-		}
-	]
+	"action": {
+		"default_popup": "src/popup.html"
+	},
+	"permissions": ["activeTab", "scripting"]
 }

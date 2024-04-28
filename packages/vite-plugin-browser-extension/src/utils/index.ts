@@ -6,10 +6,11 @@ export function Err<T extends string>(type: T, error: Error) {
 	return { ok: false as const, type, error };
 }
 
-export function parseJson<T = unknown>(content: string) {
+export function parseJson<T = unknown>(source: string) {
 	try {
-		return Ok(JSON.parse(content) as T);
+		return Ok(JSON.parse(source) as T);
 	} catch (error) {
-		return Err('parse-json', error as Error);
+		Object.assign(error as object, { source });
+		return Err('parse-json', error as Error & { source: string });
 	}
 }

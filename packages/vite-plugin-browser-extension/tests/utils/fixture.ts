@@ -9,8 +9,10 @@ export async function buildFixture(
 	const MANIFEST_ROOT = path.resolve(__dirname, `../fixtures/${name}`);
 	return await build({
 		root: MANIFEST_ROOT,
+		logLevel: 'warn',
 		plugins: [extension()],
 		build: {
+			minify: false,
 			write: options?.write ?? false,
 		},
 	});
