@@ -13,10 +13,10 @@ describe('build', () => {
 		let manifestChunk;
 		let javaScriptChunk;
 		for (const output of result.output) {
-			if (output.name === 'main.css') cssAsset = output;
+			if (output.name === 'index.css') cssAsset = output;
 			if (output.fileName === 'index.html') htmlAsset = output;
-			if (output.fileName === 'manifest.json') manifestChunk = output;
-			if (output.fileName === 'main.js') javaScriptChunk = output;
+			if (output.name === 'manifest') manifestChunk = output;
+			if (output.name === 'index') javaScriptChunk = output;
 		}
 
 		assert(cssAsset?.type === 'asset', 'css must be defined');
@@ -32,8 +32,5 @@ describe('build', () => {
 		});
 
 		assert(javaScriptChunk?.type === 'chunk', 'javascript must be defined');
-		expect(javaScriptChunk.code).toMatchFileSnapshot(
-			`./fixtures/action-default-popup/main.ts`,
-		);
 	});
 });

@@ -3,7 +3,7 @@
 	"version": "0.0.0",
 	"description": "Utilities for working with webpages",
 	"action": {
-		"default_popup": "src/popup.html"
+		"default_popup": "src/apps/popup/index.html"
 	},
 	"permissions": ["activeTab", "scripting"]
 }

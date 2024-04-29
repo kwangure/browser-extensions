@@ -57,10 +57,15 @@
 			"output": []
 		}
 	},
+	"dependencies": {
+		"@svelte-thing/components": "^0.0.20"
+	},
 	"devDependencies": {
+		"@sveltejs/vite-plugin-svelte": "^3.1.0",
 		"@types/node": "^20.10.5",
 		"chrome-types": "^0.1.282",
 		"publint": "^0.2.6",
+		"svelte": "^4.2.15",
 		"typescript": "^5.3.3",
 		"vite": "^5.2.10",
 		"vite-plugin-browser-extension": "workspace:*",

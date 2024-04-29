@@ -74,4 +74,12 @@ export default [
 			'no-inner-declarations': 'off',
 		},
 	},
+	{
+		files: ['**/*.svelte'],
+		languageOptions: {
+			globals: {
+				chrome: 'readonly',
+			},
+		},
+	},
 ];

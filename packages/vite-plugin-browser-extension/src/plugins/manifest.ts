@@ -24,8 +24,6 @@ export function manifest(): Plugin[] {
 						rollupOptions: {
 							input: ['manifest.json'],
 							output: {
-								preserveModules: true,
-								// Called for all modules when `preserveModules` is true
 								entryFileNames(chunkInfo) {
 									if (
 										chunkInfo.facadeModuleId?.endsWith(
